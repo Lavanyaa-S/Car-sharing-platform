@@ -16,6 +16,9 @@ def load_cardata_from_db():
     result_dicts = []
     for row in result.all():
       result_dicts.append(row._asdict())
+    for i in result_dicts:
+      date1=i['startdate']
+      date2=i['enddate']
   print(result_dicts)
 
 

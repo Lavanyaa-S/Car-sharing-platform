@@ -29,7 +29,7 @@ def gethostdetails():
 
 @app.route("/User")
 def getcarlist():
-  return render_template("carslist.html")
+  return render_template("userdata.html")
 
 
 @app.route("/host/apply", methods=['post'])
@@ -37,7 +37,7 @@ def getdata():
   data = request.form
   add_application_to_db(data)
   #return jsonify(data)
-  return render_template('app_submitted.html',application=data)
+  return render_template('app_submitted.html', application=data)
 
 
 if __name__ == "__main__":
