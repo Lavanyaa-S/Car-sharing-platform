@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Successfull submission</title>
+    <title>Car Sharing  </title>
     <style>
       h1 {font-size:40px;
           font-family:Arial, Helvetica, sans-serif;
@@ -27,18 +27,30 @@
         }
       p{
         font: size 28px;
-        font-family:Arial, Helvetica, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         weight: normal;
         color: rgb(50, 50, 50);
       }
     </style>
   </head>
-  <body>
-    <body style="background-color:white;">
+  <body style="background-color:white;">
     {% include 'nav.html' %}
-    <h1> WHIZ CARS</h1>
+    <h1 style="color: darkcyan">WHIZ CARS</h1>
     <img id="banner" src="https://car-sharing-platform.lavanyaas.repl.co/static/cars.jpg" >
-    <h2>"Successfully loaded the data!"</h2>
-    <h2>By sharing your car for a period of {{dayscalc}} days,You earn Rs.</h2>
-    <h1>{{amount}}</h1>
-  </body>
+    <div id="container">
+      
+      <h2>ABOUT WHIZ CARS</h2>
+      <div class="row" style="margin-bottom:16px">
+        <div class="col-8">
+      <p>
+      WHIZ Cars is one of the largest websites which provide cars for rent and the duration ranging from a day to a month.
+You can drive unlimited KMs, 0 Security Deposit, 0 Toll Charges, and 24/7 Roadside Assistance.It is easy to pick up a car from the host's location. This platform also lets you share your car for others to use it. In this way, you earn from your idle car. Become a host and earn!
+      </p>
+      <h4>Instagram : Whiz_cars_chennai</h4>
+      <h4>Mail      : contactus@whiz.org</h4>
+      <h4>Facebook  : Whiz_cars11</h4>
+        </div>
+        <div class="col-4">
+          <img src="/static/key.jpg" style="height:160px;width:200px;border-radius:4px">
+        </div>
+      </div>

@@ -1,37 +1,124 @@
+<head>
+  <meta name="Host" content="width=device-width, initial-scale=1">
+<script>
+var subjectObject = {
+  "Fiat": {
+    "Punto": ["Insured","Not Insured"],
+    "Grande Punto": ["Insured","Not Insured"],
+    "Avventura": ["Insured","Not Insured"]    
+  },
+  "Ford": {
+    "Ecosport": ["Insured","Not Insured"],
+    "Everest": ["Insured","Not Insured"],
+    "Ranger": ["Insured","Not Insured"]
+  },
+  "Honda": {
+    "Amaze": ["Insured","Not Insured"],
+    "City": ["Insured","Not Insured"],
+    "Jazz": ["Insured","Not Insured"]
+  },
+  "Tata": {
+    "Ace": ["Insured","Not Insured"],
+    "Nano": ["Insured","Not Insured"],
+    "ALTROZ": ["Insured","Not Insured"]
+  },
+  "Skoda": {
+    "Rapid style": ["Insured","Not Insured"],
+    "Rapid Elegance": ["Insured","Not Insured"],
+  }
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("cbrand");
+  var topicSel = document.getElementById("cmodel");
+  var chapterSel = document.getElementById("chapter");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    
+    chapterSel.length = 1;
+    topicSel.length = 1;
+    
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    
+    chapterSel.length = 1;
+    
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+</head>
+
 <h4>Host car Details</h4>
 <form action="/host/apply" method="post">
   
   <div class="mb-2">
     <label>Host Name</label><br>
-    <input type="text" name="hostname" placeholder="Jim">
+    <input type="text" name="hostname" placeholder="Jim" required>
   </div>
-  <div class="mb-2">
-    <label>Pickup Point</label><br>
-    <input type="text" name="hplace" placeholder="Adyar">
+  
+<div class="mb-2">
+    <label> Location of the car </label><br>
+  <select name = "hplace" required>
+            <option value = "Adyar" selected>Adyar</option>
+            <option value = "Guindy">Guindy</option>
+            <option value = "Koyambedu">Koyambedu</option>
+            <option value = "Anna Nagar">Anna Nagar</option>
+            <option value = "Tambaram">Tambaram</option>
+            <option value = "Kilpauk">Kilpauk</option>
+            <option value = "Meenambakkam">Meenambakkam</option>
+            <option value = "Ambattur">Ambattur</option>
+            <option value = "Avadi">Avadi</option>
+            
+         </select>
   </div>
+  
   <div class="mb-2">
     <label>Email ID</label><br>
-    <input type="text" name="mail" placeholder="abc@xyz.com">
+    <input type="text" name="mail" placeholder="abc@xyz.com" required>
   </div>
   <div class="mb-2">
     <label>Phone number</label><br>
-    <input type="text" name="phno" placeholder="9999999999">
+    <input type="text" name="phno" placeholder="9999999999" required>
   </div>
-  <div class="mb-2">
-    <label>Car Brand</label><br>
-    <input type="text" name="cbrand" placeholder="Fiat">
-  </div>
-  <div class="mb-2">
-    <label>Car Model</label><br>
-    <input type="text" name="cmodel" placeholder="i10">
-  </div>
+
+<div class="mb-2">
+  <label>Brand</label><br>
+  <select name="cbrand" id="cbrand" required>
+    <option value="" selected="selected">Select brand</option>
+  </select>
+  
+</div>
+
+<div class="mb-2">
+  <label> Model</label><br>
+  <select name="cmodel" id="cmodel" required>
+    <option value="" selected="selected">Please select brand first</option>
+  </select>
+</div>
+
+<div class="mb-2">
+   <label> Insurance Status</label><br>
+ <select name="chapter" id="chapter" required>
+    <option value="" selected="selected">Please select model first</option>
+  </select>
+
+</div>
+  
   <div class="mb-2">
     <label>Start Date</label><br>
-    <input type="text" name="stdate" placeholder="yyyy-mm-dd">
+    <input type="text" name="stdate" placeholder="yyyy-mm-dd" required>
   </div>
   <div class="mb-2">
     <label>End Date</label><br>
-    <input type="text" name="endate" placeholder="yyyy-mm-dd">
+    <input type="text" name="endate" placeholder="yyyy-mm-dd" required>
   </div>
   <input type="submit">
 </form>

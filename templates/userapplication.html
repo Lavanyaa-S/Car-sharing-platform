@@ -1,26 +1,42 @@
 <h4>User Details</h4>
-<form action="/host/apply" method="post">
+<form action="/user/rent" method="post">
   
   <div class="mb-2">
     <label>User Name</label><br>
-    <input type="text" name="username" placeholder="Jim">
+    <input type="text" name="username" placeholder="Jim" required>
   </div>
   <div class="mb-2">
     <label>Email ID</label><br>
-    <input type="text" name="usermail" placeholder="abc@xyz.com">
+    <input type="text" name="usermail" placeholder="abc@xyz.com" required>
   </div>
   <div class="mb-2">
     <label>Phone number</label><br>
-    <input type="text" name="userphno" placeholder="9999999999">
+    <input type="text" name="userphno" placeholder="9999999999" required>
+  </div>
+
+  <div class="mb-2">
+    <label> Location of the car </label><br>
+  <select name = "uplace" required>
+            <option value = "Adyar" selected>Adyar</option>
+            <option value = "Guindy">Guindy</option>
+            <option value = "Koyambedu">Koyambedu</option>
+            <option value = "Anna Nagar">Anna Nagar</option>
+            <option value = "Tambaram">Tambaram</option>
+            <option value = "Kilpauk">Kilpauk</option>
+            <option value = "Meenambakkam">Meenambakkam</option>
+            <option value = "Ambattur">Ambattur</option>
+            <option value = "Avadi">Avadi</option>
+            
+         </select>
   </div>
 
   <div class="mb-2">
     <label>Start Date</label><br>
-    <input type="text" name="stdate" placeholder="yyyy-mm-dd">
+    <input type="text" name="stdate" placeholder="yyyy-mm-dd" required>
   </div>
   <div class="mb-2">
     <label>End Date</label><br>
-    <input type="text" name="endate" placeholder="yyyy-mm-dd">
+    <input type="text" name="endate" placeholder="yyyy-mm-dd" required>
   </div>
   <input type="submit">
 </form>

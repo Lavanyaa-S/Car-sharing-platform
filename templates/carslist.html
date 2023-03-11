@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Car List </title>
-</head>
-<body>
-  <p>
-    inside listing page
-  </p>
-</body>
-</html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>No cars!</title>
+    <style>
+      h1 {font-size:40px;
+          font-family:Arial, Helvetica, sans-serif;
+          font-weight:bold;
+          color:rgb(0,0,0);
+          text-align:center;;
+         }
+      #banner {width:100%;
+               height:260px;
+               object-fit:cover;
+               margin-bottom:32px;
+              }
+      #container {
+        max-width:900px;
+        margin:0 auto 0 auto;
+      }
+      h2{font-size:32px;
+         font-family:Arial, Helvetica, sans-serif;
+         font-weight:normal;
+         color: rgb(100, 100, 100);
+         text-align:center;
+        }
+      p{
+        font: size 28px;
+        font-family: Arial, Helvetica, sans-serif;
+        weight: normal;
+        color: rgb(50, 50, 50);
+      }
+    </style>
+  </head>
+  <body>
+    <body style="background-color:white;">
+    {% include 'nav.html' %}
+    <h1> WHIZ CARS</h1>
+    <img id="banner" src="https://car-sharing-platform.lavanyaas.repl.co/static/cars.jpg" >
+    
+      <h2>"Sorry! No cars available on these dates!!"</h2>
+    
+    
+  </body>
