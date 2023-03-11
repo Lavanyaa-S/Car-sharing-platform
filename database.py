@@ -29,7 +29,8 @@ def returning_dict_of_possible_cars(idlist,days):
     "Rapid style": 1400,
     "Rapid Elegance": 2310
     }
-
+    
+  
     result = conn.execute(text("select * from carhostdet "))
     result_dicts = []
     for row in result.all():
