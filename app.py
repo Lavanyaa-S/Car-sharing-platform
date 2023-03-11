@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from database import load_cardata_from_db, add_application_to_db, listpossiblecars,returning_dict_of_possible_cars
+from database import load_cardata_from_db, add_application_to_db, listpossiblecars, returning_dict_of_possible_cars
 import re, datetime
 
 app = Flask(__name__)
@@ -27,6 +27,7 @@ def homepage():
 def gethostdetails():
   return render_template("hostdetail.html")
 
+
 @app.route("/contactus")
 def getcontactdetails():
   return render_template("contact.html")
@@ -35,6 +36,7 @@ def getcontactdetails():
 @app.route("/User")
 def getcarlist():
   return render_template("userdata.html")
+
 
 @app.route("/Booked")
 def succesfull():
@@ -62,15 +64,15 @@ def putdata():
   for ids in idlist:
     id = listpossiblecars(ids, rstart, rend)
     if id > 0:
-      daysrented=(rend-rstart).days
+      daysrented = (rend - rstart).days
       finalidlist.append(id)
   if len(finalidlist) == 0:
     return render_template("carslist.html")
   else:
-    listofdictofdata=returning_dict_of_possible_cars(finalidlist,daysrented)
-    return render_template("listingcars.html",listofdictofdata=listofdictofdata)
+    listofdictofdata = returning_dict_of_possible_cars(finalidlist, daysrented)
+    return render_template("listingcars.html",
+                           listofdictofdata=listofdictofdata)
 
- 
 
 @app.route("/host/apply", methods=['post'])
 def getdata():
@@ -87,7 +89,7 @@ def getdata():
     "Ace": 1200,
     "Nano": 1000,
     "ALTROZ": 1780,
-    "Rapid style": 1400,
+    "Rapid style": 1500,
     "Rapid Elegance": 2310
   }
   data = request.form
@@ -104,7 +106,7 @@ def getdata():
   carmodel = data['cmodel']
   dayscalc = (enddate - startdate).days
   calcamnt = dayscalc * amount[carmodel]
-  
+
   return render_template('app_submitted.html',
                          application=data,
                          amount=calcamnt,
